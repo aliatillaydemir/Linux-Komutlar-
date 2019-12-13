@@ -1,0 +1,86 @@
+pwd : nerede (hangi dizinde) oldugunu gösterir.
+whoami : kullanıcının kim oldugunu gösterir.
+cd : (Change directory) Dizin degistirmene yarar.
+mv : taşıma komutudur. klasörün ismini de değiştirebilirsin.
+ÖRNEK= mv klasoradı yeniklasoradı
+mkdir : yeni dizin olusturabilirsin.
+touch : yeni dosya olusturabilirsin.
+rmdir : dizin siler.
+rm : dosya siler.
+rm -r : ici dolu dosyaları silebilir. sadece 'rm', dolu dosyaları silemez. 
+ls : listeleme yapar.
+ÖRNEK :
+ls -l==>bilgi verir.(sahiplik grup vs.)
+ls-a==> gizli dosyaları listeler.Bu dosyaların  başında nokta vardır.
+ls -al==> iksini aynı anda yapar.
+man : komutun ne işe yaradıgını bulur.(komut man sonrası yazılmalıdır.)
+ÖRNEK = man touch
+help : genel yardım.
+history : geçmişte giridiğin bütün kodları ekrana basar.
+cp : kopyalama.(copy-paste) iki argüman alır.
+1-) kopyalanacak dosyanın konumu
+2-) kopyalanacak yer.
+ÖRNEK = cp /home/dosyamız.txt /home/indirilenler/dosyamız.txt
+nano & vi : editör. yazı yazma yerimiz. bu dosyayı nano ile yazdık.
+sudo : (super user do) süper kullanıcı oluruz.(her türlü erişim sağlanablir.) 
+sudo su : root oluruz.(su=switch user)
+cat : dosyanın icerigini komut satırı ekranına bastırabiliriz.(tamamını)
+ÖRNEK = cat dosya.txt
+head -3 dosya.txt (ilk baştaki 3 satiri bastırır.)
+tail -2 dosya.txt (son 2 satiri bastirir.)
+alias : komutları değiştirebiliriz.
+ÖRNEK = alias listele=ls (artık ls yerine listele yazabiliriz. ikiside çalışır)
+alias geçicidir. pc kapatılınca komutlar eski haline döner.
+ ( nano ~/.bashrc ) ile ls komutunun bulundugu alana kayıt yaptırılır.
+ (source ~/.bashrc) ile kalıcılık sağlanır.
+ more : dosyanın bir kısmını ekrana basar.( more dosya.txt)
+tamamı icin komut sonrası space tusuna basılmalıdır.q cıkar.geriye basma  'b'.
+uname : mevcut işletim sistemini gösterir.
+date :  tarih gösterir.
+cal : takvimi gösterir.  
+--> komutların aralarına ; ile birden çok komut çalıştırılabilir.
+ÖRNEK = date;cal;whoami
+sudo apt-get install x : x programını  indirir.
+sudo apt-get update : güncelleme yapar.
+sudo apt-get upgrade : yükseltme yapar.		
+(bu işlemler için yönetici olunmalıdır bunun icin sudo,su vb kullanılmalı.)
+xkill : fare X isretini alır ve tıklanılan program anında kapanır :D 
+ps aux --> sudo kill -9 pid  (procces id) 
+ps aux | grep x -->
+grep : arama yapar.( grep x ) gibi ... 
+sudo apt-get clean : indirilen paketleri siler.
+sudo apt-get autoclean : kullanılamaz durumdaki paketi siler.
+sudo apt-get autoremove : silinen paketler sonrasındaki bağımlılıkları kaldırır.
+chown chmod kullanıcı oluşturma silme vs ...
+---------PROGRAM SİLME-----------
+sudo apt-get remove program_adı : programı kaldırır. 
+sudo apt-get purge program_adı  : programı yapılandırma dosyalarıyla kaldırır.
+dpkg -l : sistemde kalan yapılandırma ddosyalarını gösterir buradan silinebilr
+sudo apt-get autoremove ile vs ...
+---------------------------------
+chmod : sudo chmod +x dosya.txt --> bütün izinlerde x açılır. 
+sudo chmod +-x/r/w dosya.txt şeklinde kullanılır.
+chmod 730 dosya.txt 
+1-> x (çalıştırılabilir izni)
+2-> w (yazabilir izni)
+4-> r (okuyabilir izni)
+
+3 basamak toplam şekilde yazılır. 1.kişi(user),2.grup(group),3.diğerleri(other)
+chmod u+x dosya.txt , o-xr dosya.txt , g+wxr dosya.txt ...
+
+chown : chown attilahun dosya.txt    (sahiplik değiştirir.) 
+chgrp : grup değiştirir.
+passwd ati : ati kullancısının (varsa tabiki) şifresini değiştirir.
+userdel ali : ali kullanıcısını siler.
+userdel -r ali : ali kullanıcısının ev dizinini ve bilgilerini de siler.
+adduser ati : ati kullanıcısını ekler.(eklerken bilgileri girmeni sağlar.)
+useradd ati : ati kullanıcsını ekler.
+newgrp x : x grubu oluşturur.
+groupdel x : x grubunu siler.
+hostname : makinenin konak ismini verir. 
+uptime : makina ne kadar zamandır açık berlirtir.
+top : temel durumu, bellek/işlemci kullanımını vs. belirtir.(çıkış=q)
+free : bellek kullanımı
+last : sisteme en son giriş yapmış kullanıcıları gösterir.
+init 0 : sistemi kapatır.(Bilgisayarı)
+init 6 : reboot eder (Pc'yi yeniden başlatır.)
